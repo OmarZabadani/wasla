@@ -1,0 +1,178 @@
+{
+  "project_name": "Wasla Web (وصلة)",
+  "app_archetype": "hybrid_fullstack",
+  "theme": "light_preferred_with_dark_toggle",
+  "language_support": {
+    "languages": ["en", "ar"],
+    "default_language": "en",
+    "rtl_support": true,
+    "arabic_font_stack": "'Noto Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif"
+  },
+  "typography": {
+    "font_family_heading": "Plus Jakarta Sans, var(--font-arabic), sans-serif",
+    "font_family_body": "DM Sans, var(--font-arabic), sans-serif",
+    "font_family_mono": "IBM Plex Mono, monospace",
+    "font_import": "@import \"@fontsource-variable/plus-jakarta-sans\";\n@import \"@fontsource-variable/dm-sans\";",
+    "scale_px": {
+      "display": 56,
+      "h1": 42,
+      "h2": 32,
+      "h3": 24,
+      "h4": 18,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "font-bold tracking-tight text-slate-900 dark:text-slate-50",
+      "body": "leading-relaxed text-slate-700 dark:text-slate-300 font-normal",
+      "labels": "text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400"
+    }
+  },
+  "colors": {
+    "brand_name": "Emerald & Deep Navy Academia-Tech Fusion",
+    "accent": "#0D9488",
+    "on_accent": "#FFFFFF",
+    "secondary_accent": "#2563EB",
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F8FAFC",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#475569",
+        "roles": {
+          "link": "#0D9488",
+          "error": "#DC2626",
+          "success": "#16A34A",
+          "warning": "#D97706"
+        }
+      },
+      {
+        "name": "card_and_panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "border": "#E2E8F0",
+          "hover_bg": "#F1F5F9"
+        }
+      },
+      {
+        "name": "sidebar_and_nav",
+        "kind": "solid",
+        "bg": "#0F172A",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "active_indicator": "#14B8A6",
+          "border": "#1E293B"
+        }
+      },
+      {
+        "name": "hero_banner",
+        "kind": "gradient",
+        "contrast_against": "#0F172A",
+        "guarantee": "scrim: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(13,148,136,0.85) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1",
+        "roles": {
+          "link": "#5EEAD4",
+          "accent_pill": "#134E4A"
+        }
+      },
+      {
+        "name": "badge_match_high",
+        "kind": "solid",
+        "bg": "#ECFDF5",
+        "on_bg": "#065F46",
+        "on_bg_muted": "#047857"
+      },
+      {
+        "name": "badge_match_mid",
+        "kind": "solid",
+        "bg": "#EFF6FF",
+        "on_bg": "#1E40AF",
+        "on_bg_muted": "#1D4ED8"
+      },
+      {
+        "name": "badge_gap_track",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309"
+      }
+    ]
+  },
+  "entry_surfaces": {
+    "/": "Asymmetric Hero with institutional trust badge for Applied Science Private University, role entry switch (Student, Company, University Admin), transparent match formula visualizer preview, and seeded live opportunities marquee",
+    "/login": "Branded split auth screen with left institutional positioning panel (Wasla mission, ASPU seal, verified partner stats) and right quick-switch role login form",
+    "/register": "Step-assisted role-based registration flow (Student with major & university ID, Company with commercial registry, Admin invite check)"
+  },
+  "match_formula_weights": {
+    "total": "100%",
+    "weights": [
+      { "factor": "Major & Academic Track", "weight": "25%", "color": "#0D9488", "desc": "Direct correlation to required training field" },
+      { "factor": "Completed Courses & Grades", "weight": "25%", "color": "#2563EB", "desc": "GPA & core subject benchmark score" },
+      { "factor": "Verified Technical & Soft Skills", "weight": "25%", "color": "#7C3AED", "desc": "Skills matching company job spec" },
+      { "factor": "External Courses & Certificates", "weight": "10%", "color": "#EA580C", "desc": "Extracurricular credentials & bootcamps" },
+      { "factor": "Interests & AI Profiling Qs", "weight": "10%", "color": "#0891B2", "desc": "Cultural fit and career trajectory alignment" },
+      { "factor": "Location & Commute Proximity", "weight": "5%", "color": "#059669", "desc": "Geographic convenience for field attendance" }
+    ],
+    "disclaimer": "Sample data is generated from realistic university training templates. Recommendations currently rely on a transparent weighted formula and AI-assisted heuristics (not fully trained autonomous ML)."
+  },
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwc3R1ZGVudHN8ZW58MHx8fHwxNzk0MDQzNjUwfDA&ixlib=rb-4.1.0&q=85",
+    "students_collaborating": "https://images.unsplash.com/photo-1560264357-8d9202250f21?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwzfHx0ZWNobm9sb2d5JTIwc3R1ZGVudHMlMjB3b3JraW5nfGVufDB8fHx8MTc5NDA1NzkyOXww&ixlib=rb-4.1.0&q=85",
+    "tech_workspace": "https://images.unsplash.com/photo-1640163561331-1b68a6474957?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwc3R1ZGVudHMlMjB3b3JraW5nfGVufDB8fHx8MTc5NDA1NzkyOXww&ixlib=rb-4.1.0&q=85",
+    "corporate_headquarters": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBidWlsZGluZ3xlbnwwfHx8fDE3OTQwNTc5Mjl8MA&ixlib=rb-4.1.0&q=85",
+    "campus_walkway": "https://images.unsplash.com/photo-1556560957-9b6c2b102581?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwc3R1ZGVudHN8ZW58MHx8fHwxNzk0MDQzNjUwfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "component_structure": {
+    "navigation": "Header with ASPU x Wasla co-branding, Language Switcher (EN/AR), Theme Toggle, Role-aware Navigation Links, Notification Bell with badge, and Auth CTAs",
+    "student_portal": {
+      "profile_editor": "Multi-tab editor: Personal & Location, Academic Courses with Grades, External Certifications, Skills Matrix with endorsements, Projects portfolio, Language proficiencies",
+      "ai_profiling": "Interactive multi-question assessment evaluating work style, technical passion, and preferred domain",
+      "ai_cv_generator": "One-click AI CV compiler with ATS-optimized templates, live preview, bilingual export, and print/PDF formatting",
+      "opportunities_ranked": "Card list with prominent match score badges (e.g. 92% Match), expandable breakdown modal explaining Major 25% + Courses 25% + Skills 25% + Certs 10% + AI/Interests 10% + Location 5%",
+      "gap_discovery": "Career track selector (Backend, Data Science, Cybersecurity, AI/ML, Cloud DevOps, Fullstack, Mobile) displaying 'Development Opportunities' with ranked actionable course and project recommendations",
+      "application_tracker": "Kanban & table view of applied field trainings: Applied, Under Review, Interview Scheduled, Accepted, Rejected, with company feedback"
+    },
+    "company_portal": {
+      "post_opportunity": "Structured training posting modal: Required major, required & preferred skills, duration, location/remote, stipend, learning outcomes",
+      "applicant_review": "Candidate ranking based on match score, one-click CV preview, status changer (Pending -> Accepted/Rejected/Interview), and final trainee evaluation form with rating & certificate generation",
+      "student_talent_search": "Filters for major, GPA range, specific skills, city/location, with direct invitation dispatch"
+    },
+    "university_admin_portal": {
+      "analytics_dashboard": "Recharts interactive visualizations: Placement rate by major, Top recruited skillsets, Company participation index, Match accuracy distribution",
+      "company_verification": "Approve/reject pending company registrations and compliance checks",
+      "opportunities_moderation": "Review and approve training postings",
+      "ai_questions_manager": "Add, edit, and toggle AI profiling questionnaire items",
+      "participation_reports": "Exportable tabular reports for dean/department head review"
+    }
+  },
+  "motion": {
+    "page_transitions": "Subtle fade-in and slide-up (opacity: 0 to 1, y: 12 to 0, duration: 0.25s)",
+    "match_score_radial": "Animated circular progress bar animating from 0% to calculated score",
+    "gap_analysis_meter": "Smooth staggered bar expansion indicating skill fit vs benchmark",
+    "reduced_motion": "All motion strictly guarded under prefers-reduced-motion media query"
+  },
+  "accessibility": {
+    "wcag_target": "WCAG 2.1 AA compliant",
+    "contrast_ratio": "All text tokens >= 4.5:1 against respective surface backgrounds",
+    "keyboard_nav": "Full tab order with visible outline-ring on all interactive triggers",
+    "aria_roles": "Role badges, match meters, tab lists, and dialogs have full ARIA labelling and live region announcements for status changes",
+    "rtl_considerations": "Mirroring margins, paddings, flex directions, and chevron icons when dir='rtl' (Arabic mode)"
+  },
+  "testing_attributes": {
+    "rule": "Every interactive control, filter, match score, modal trigger, tab, and form input MUST contain a semantic 'data-testid' attribute (e.g., data-testid='student-profile-save-btn', data-testid='match-score-breakdown-modal', data-testid='lang-toggle-btn')"
+  },
+  "instructions_to_main_agent": [
+    "1. Seed rich, realistic demo data for Applied Science Private University: computer science, software engineering, cybersecurity, data science, AI students with completed courses (e.g. Algorithms A, Databases B+, Web Dev A-), skills, and sample companies (e.g., Zain, Orange Jordan, Mawdoo3, Careem, Amazon MENA, ProgressSoft).",
+    "2. Provide seamless instant switching between mock user accounts (Student: Ahmad Al-Khalidi, Company: TechVentures MENA Recruiter, Admin: ASPU Field Training Coordinator Dr. Nadia) for seamless review.",
+    "3. Implement the weighted formula calculation accurately: Major (25) + Courses (25) + Skills (25) + External (10) + AI Profiling (10) + Location (5) with an interactive 'Why this score?' breakdown popover.",
+    "4. Ensure full English and Arabic bilingual toggle with proper HTML `dir='rtl'` and layout adjustments for Arabic mode.",
+    "5. Include the required transparency disclaimer: 'Sample data generated from realistic training templates. Recommendations use a transparent weighted scoring formula (AI-assisted heuristics, not trained ML models yet)'.",
+    "6. Build the AI CV generation feature with a clean printable/downloadable ATS layout, and Career Gap Discovery showing positive 'Development Opportunities' with curated learning next-steps."
+  ]
+}

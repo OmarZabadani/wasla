@@ -1,0 +1,60 @@
+{
+  "iteration": 1,
+  "passed": 7,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "notes": "5 acceptance_matrix criteria covered: 1 backend test file + 6 browser checks (one criterion got both backend+browser since it's API-backed UI). Two checks mutated seeded data (ahmad's profile fields, Sara Al-Masri's application status on Backend Developer Trainee) during verification and were restored to their original values via direct API calls immediately after the check ran; restoration verified by a follow-up GET showing original values (course/skill/language counts back to 7/6/2, GPA back to 3.36; all 4 applicant statuses back to 'pending').",
+  "checks": [
+    {
+      "criterion": "Profile list rows use stable keys (code-review fix): removing a middle row keeps other rows' own state",
+      "name": "profile-stable-keys-on-remove",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Added 3 rows each to External courses, Projects and Skills tabs on ahmad's profile (no save clicked, so DB unaffected - confirmed via GET /api/student/profile showing external_courses=2, projects=2, skills=6 after the check). Typed un-submitted draft text in the last row's tag input (TagInput commits on blur, so draft became a chip), removed the middle new row, and asserted the remaining last row kept its own title and its own draft/chip value, with the removed row's title ('TscheckExtB'/'TscheckProjB'/'TscheckSkillB') absent from every remaining row. Same pattern verified for Projects (tech tag input) and Skills (name+level buttons)."
+    },
+    {
+      "criterion": "Profile add/edit/remove + save still works after the key refactor",
+      "name": "profile-save-add-edit-remove-persist",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Added course 'Cloud Computing' grade A, added skill 'Docker' advanced, removed language 'English', clicked profile-save-btn -> toast 'Profile saved' shown. Reloaded page: course-name-7='Cloud Computing', skill-name-6='Docker', language index 1 gone, language-name-0='Arabic' still present. GPA badge updated from 3.36 to 3.44. Profile restored to original values afterward via PUT /api/student/profile with pre-check snapshot; GET confirmed restoration (7 courses, 6 skills, 2 languages, gpa 3.36)."
+    },
+    {
+      "criterion": "Match scores unchanged after compute_match() refactor into per-factor functions",
+      "name": "test_tscheck_match_scores",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "GET /api/student/recommendations as ahmad -> 200, 9 opportunities, totals sorted desc [96.6, 78.2, 62.5, 61.0, 54.9, 50.8, 49.5, 33.0, 28.8]; every match.factors has exactly keys/weights {major:25,courses:25,skills:25,external:10,interests:10,location:5} and total == round(sum(points),1) for all rows. Second test confirms GET without auth -> 401/403. `python -m pytest tests/test_tscheck_match_scores.py` 2 passed."
+    },
+    {
+      "criterion": "Match scores unchanged after compute_match() refactor into per-factor functions (UI: score ring + Why this score dialog)",
+      "name": "opportunities-score-ring-why-score-dialog",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "/student/opportunities renders opp-card-* with a score ring (opp-score-*) showing e.g. '97%', and clicking opp-why-* opens a dialog listing exactly 6 factor-<key> rows (major, courses, skills, external, interests, location)."
+    },
+    {
+      "criterion": "Company applicant ranking still works",
+      "name": "company-applicant-ranking-and-status",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Logged in as recruiter@techventures.jo, opened Backend Developer Trainee applicants: 4 applicant-score-* rings read descending (matches API order 96/70/49/49). Why-this-score dialog opens with 6 factor rows. Clicked applicant-set-accepted then applicant-set-rejected on Sara Al-Masri's application (id c4d8d608...) and confirmed the status badge updated to 'Accepted' then 'Rejected'; reset back to 'Pending' at end of check. GET /api/company/opportunities/.../applicants afterward confirms all 4 applications are back to status 'pending'."
+    },
+    {
+      "criterion": "Gap analysis unchanged",
+      "name": "growth-gap-analysis-tracks",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "/student/growth for ahmad shows 6 track-btn-* buttons, growth-summary with growth-readiness score ring (e.g. '71%'), growth-headline text, and >=1 gap-item-* ranked development suggestion. Switching track (clicking 2nd track button) updates the readiness ring and headline."
+    },
+    {
+      "criterion": "Smoke check through public preview ingress URL",
+      "name": "preview-login-recommendations",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Logged in as ahmad via https://wasla-intern--9iajuo44.preview.emergentagent.com, navigated to /student/opportunities, opp-card-* rendered correctly through the ingress path."
+    }
+  ]
+}
